@@ -7,5 +7,5 @@ def roman_to_int(roman_string):
     n = 0
     for i in reversed(roman_string):
         n = dictionary[i]
-        number = number + n if number < n * 5 else -n
+        number += n if number < n * 5 else -n
     return number
