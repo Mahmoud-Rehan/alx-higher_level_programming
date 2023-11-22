@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 """Class Square module"""
+
+
 class Square:
+    """Define Class Square"""
     def __init__(self, size=0):
         try:
             self.__size = size
