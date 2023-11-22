@@ -4,8 +4,8 @@
 
 class Square:
     """Define Class Square"""
-    def __init__(self, size):
-        self.__size = size
+    def __init__(self, size=0):
+        self.size = size
 
     """Retrive Size Method"""
     @property
