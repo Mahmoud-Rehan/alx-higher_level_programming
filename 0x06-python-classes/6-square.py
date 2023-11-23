@@ -1,10 +1,14 @@
 #!/usr/bin/python3
 """Class Square Module"""
+
+
 class Square:
+
     """Define Class Suare"""
     def __init__(self, size=0, position=(0, 0)):
         self.__size = size
         self.__position = position
+
     @property
     def size(self):
         return (self.__size)
@@ -23,10 +27,10 @@ class Square:
 
     @position.setter
     def positionself(self, value):
-        if not isinstance(value, tuple) or
-        not all(isinstance(n, int) for n in value) or
-        not all(n >= 0 for n in value) or
-        len(value) != 2:
+        if (not isinstance(value, tuple) or
+            not all(isinstance(n, int) for n in value) or
+            not all(n >= 0 for n in value) or
+           len(value) != 2):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
