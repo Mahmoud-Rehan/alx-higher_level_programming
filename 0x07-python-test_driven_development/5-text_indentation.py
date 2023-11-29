@@ -10,14 +10,13 @@ def text_indentation(text):
         test: STRING.
 
     RAISES:
-        TypeError: IF text IS NOT A STRING.
+        TypeError: IF tEXT IS NOT A STRING.
     """
 
     if not isinstance(text, str):
         raise TypeError("text must be a string")
     for s in ":?.":
-        text = (s + '\n\n').join([l.strip(" ")
-            for l in text.split(s)])
+        text = (s + '\n\n').join([n.strip(" ") for n in text.split(s)])
     print(text, end="")
 
 
