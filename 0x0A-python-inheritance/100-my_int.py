@@ -3,10 +3,10 @@
 
 
 class MyInt(int):
-    """ MyInt Class """
+    """ The class MyInt """
     def __new__(cls, *args, **kwargs):
         """ Integer repl version """
-        return super(MyInt, cls).__new__(cls, *args, **args)
+        return super(MyInt, cls).__new__(cls, *args, **kwargs)
 
     def __ne__(self, num):
         """ set != to be == """
