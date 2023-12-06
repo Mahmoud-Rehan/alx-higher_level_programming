@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+""" add_atributte FUNCTION MODULE """
+
 
 def add_attribute(ob, name, value):
     """ Adds a new atributte to an object """
