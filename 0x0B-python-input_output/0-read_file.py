@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" THE read_file FUNCTION MODULE """
+""" MODULE FOR THE read_file FUNCTION """
 
 
 def def read_file(filename=""):
