@@ -18,7 +18,7 @@ size = n = 0
 
 def print_size():
     """ printer function """
-    print("File size: {}".format(size))
+    print(f"File size: {size}")
     for k, v in sorted(status.items()):
         if v > 0:
             print("{:s}: {:d}".format(k, v))
