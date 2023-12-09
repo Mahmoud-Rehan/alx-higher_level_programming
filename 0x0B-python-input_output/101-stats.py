@@ -7,7 +7,7 @@ status = {
         "301": 0,
         "400": 0,
         "401": 0,
-        "403", 0,
+        "403": 0,
         "404": 0,
         "405": 0,
         "500": 0
@@ -21,7 +21,7 @@ def print_size():
     print("File size: {}".format(size))
     for k, v in sorted(status.items()):
         if v > 0:
-            print("{:s}: {:s}".format(k, v))
+            print("{:s}: {:d}".format(k, v))
 
 
 try:
