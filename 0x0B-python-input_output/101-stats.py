@@ -28,14 +28,14 @@ try:
     for line in stdin:
         split_line = line.split()
         if len(split_line) >= 2:
-            s = split_line[-2]
+            state = split_line[-2]
             size += int(split_line[-1])
-            if s in status:
-                status[s] += 1
+            if state in status:
+                status[state] += 1
         n += 1
 
         if n % 10 == 0:
             print_size()
-        print_size()
+    print_size()
 except KeyboardInterrupt as r:
     print_size()
