@@ -26,10 +26,10 @@ def print_size():
 
 try:
     for line in stdin:
-        split = line.split()
-        if len(split) >= 2:
-            s = split[-2]
-            size += int(split[-1])
+        split_line = line.split()
+        if len(split_line) >= 2:
+            s = split_line[-2]
+            size += int(split_line[-1])
             if s in status:
                 status[s] += 1
         n += 1
