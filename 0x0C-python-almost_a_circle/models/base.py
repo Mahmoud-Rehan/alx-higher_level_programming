@@ -1,10 +1,13 @@
 #!/usr/bin/python3
+""" Base CLASS MODULE """
+
 
 class Base:
-
+    """ Base class """
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """ Initialization function """
         if id is not None:
             self.id = id
         else:
