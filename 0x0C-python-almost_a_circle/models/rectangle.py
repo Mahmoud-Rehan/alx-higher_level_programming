@@ -59,7 +59,7 @@ class Rectangle(Base):
 
     def validate(self, name, v, check=True):
         """ validate function """
-        if not isinstance(v, int):
+        if type(v) != int:
             raise TypeError("{} must be an integer".format(name))
 
         if not check and v <= 0:
