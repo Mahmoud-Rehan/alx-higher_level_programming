@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ Rectangle CLASS MODULE """
-from model.base import Base
+from models.base import Base
 
 
 class Rectangle(Base):
@@ -19,8 +19,8 @@ class Rectangle(Base):
         return (self.__width)
 
     @width.setter
-    """ Set width function """
     def width(self, v):
+        """ Set width function """
         self.__width = v
 
     @property
