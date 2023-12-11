@@ -62,7 +62,7 @@ class Rectangle(Base):
         if type(v) != int:
             raise TypeError("{} must be an integer".format(name))
 
-        if not check and v <= 0:
-            raise ValueError("{} must be >= 0".format(name))
-        elif check and v < 0:
+        if check and v < 0:
             raise ValueError("{} must be > 0".format(name))
+        elif not check and v <= 0:
+            raise ValueError("{} must be >= 0".format(name))
