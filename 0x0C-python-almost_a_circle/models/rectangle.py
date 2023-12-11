@@ -72,6 +72,6 @@ class Rectangle(Base):
 
     def display(self):
         """ display function """
-        p = "\n" * self.y + (" " * self.x /
-                + "#" * self.width + "\n") * self.height
+        p = "\n" * self.y + (" " * self.x \
+                             + "#" * self.width + "\n") * self.height
         print(p, end="")
