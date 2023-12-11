@@ -21,6 +21,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, v):
         """ Set width function """
+        self.validate("width", v)
         self.__width = v
 
     @property
@@ -31,6 +32,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, v):
         """ Set height function """
+        self.validate("height", v)
         self.__height = v
 
     @property
@@ -41,6 +43,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, v):
         """ Set x function """
+        self.validate("x", v)
         self.__x = v
 
     @property
@@ -51,4 +54,15 @@ class Rectangle(Base):
     @y.setter
     def y(self, v):
         """ Set y function """
+        self.validate("y", v)
         self.__y = v
+
+    def validate(self, name, v, check=True):
+        """ validate function """
+        if not isinstance(v, int):
+            raise TypeError("{} must be an integer".format(name))
+
+        if not check and v <= 0:
+            raise ValueError("{} must be >= 0".format(name))
+        elif check and v < 0:
+            raise ValueError("{} must be > 0".format(name))
