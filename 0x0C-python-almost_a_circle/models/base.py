@@ -57,8 +57,9 @@ class Base:
     def load_from_file(cls):
         """ load_from_file function """
         from os import path
-        file = "{}.json".format(cls.__name__)
-        if not os.isfile(filename):
+        filename = "{}.json".format(cls.__name__)
+        if not path.isfile(filename):
             return ([])
         with open(filename, "r", encoding="utf-8") as f:
-            return (cls.create(**dicts) for dicts in cls.from_json_string(f.write))
+            return ([cls.create(**dicts)
+                    for dicts in cls.from_json_string(f.read())])
