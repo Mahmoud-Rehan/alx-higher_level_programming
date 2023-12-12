@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """ Base CLASS MODULE """
 import json
-
+from models.rectangle import Rectangle
+from models.square import Square
 
 class Base:
     """ Base class """
