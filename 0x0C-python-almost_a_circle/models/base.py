@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 """ Base CLASS MODULE """
 import json
-from models.rectangle import Rectangle
-from models.square import Square
+
 
 class Base:
     """ Base class """
@@ -46,8 +45,8 @@ class Base:
         from models.square import Square
         from models.rectangle import Rectangle
         if cls is Rectangle:
-            instance = Rectangle(0, 0, 0)
+            instance = Rectangle(1, 1, 1)
         elif cls is Square:
-            instance = Square(0, 0, 0)
+            instance = Square(1, 1, 1)
         instance.update(**dictionary)
         return (instance)
