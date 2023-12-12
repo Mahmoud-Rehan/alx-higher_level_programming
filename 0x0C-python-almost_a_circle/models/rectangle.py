@@ -80,3 +80,39 @@ class Rectangle(Base):
         return "[{}] ({}) {}/{} - {}/{}".format(type(self).__name__,
                                                 self.id, self.x, self.y,
                                                 self.width, self.height)
+
+    def update(self, *args, **kwargs):
+        """ update the values function """
+        if args and len(args) != 0:
+            length = 0
+            for a in args:
+                if length == 0:
+                    if a is None:
+                        break
+                    else:
+                        self.id = a
+                elif length == 1:
+                    self.width = a
+                elif length == 2:
+                    self.height = a
+                elif length == 3:
+                    self.x = a
+                elif length == 4:
+                    self.y = a
+                length = length + 1
+
+        elif kwargs and len(kwargs) != 0:
+            for key, value in kwargs.items():
+                if key == "id":
+                    if value is None:
+                        break
+                    else:
+                        self.id = value
+                elif key == "width":
+                    self.width = value
+                elif key == "height":
+                    self.height = value
+                elif key == "x":
+                    self.x = value
+                elif key == "y":
+                    self.y = value
