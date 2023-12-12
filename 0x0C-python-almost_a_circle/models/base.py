@@ -48,5 +48,7 @@ class Base:
             instance = Rectangle(1, 1, 1)
         elif cls is Square:
             instance = Square(1, 1, 1)
+        else:
+            instance = None
         instance.update(**dictionary)
         return (instance)
