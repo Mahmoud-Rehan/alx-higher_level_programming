@@ -38,3 +38,12 @@ class Base:
             return ([])
         else:
             return (json.loads(json_string))
+
+    @classmethod
+    def create(cls, **dictionary):
+        """ creat instance function """
+        if cls is Rectangle:
+            instance = Rectangle(0, 0, 0)
+        elif cls is Square:
+            instance = Square(0, 0, 0)
+        instance.update(**dictionary)
