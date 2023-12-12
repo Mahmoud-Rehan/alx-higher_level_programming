@@ -43,8 +43,11 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """ creat instance function """
+        from models.square import Square
+        from models.rectangle import Rectangle
         if cls is Rectangle:
             instance = Rectangle(0, 0, 0)
         elif cls is Square:
             instance = Square(0, 0, 0)
         instance.update(**dictionary)
+        return (instance)
