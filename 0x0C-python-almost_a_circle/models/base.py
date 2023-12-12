@@ -57,7 +57,7 @@ class Base:
     def load_from_file(cls):
         """ load_from_file function """
         from os import path
-        filename = "{}.json".format(cls.__name__)
+        file = "{}.json".format(cls.__name__)
         if not os.isfile(filename):
             return ([])
         with open(filename, "r", encoding="utf-8") as f:
