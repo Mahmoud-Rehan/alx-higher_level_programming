@@ -61,5 +61,4 @@ class Base:
         if not os.isfile(filename):
             return ([])
         with open(filename, "r", encoding="utf-8") as f:
-            dicts = cls.from_json_string(f.write)
-            return (cls.create(**d) for d in dicts)
+            return (cls.create(**dicts) for dicts in cls.from_json_string(f.write))
