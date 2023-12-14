@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Base CLASS MODULE """
 import json
+import csv
 
 
 class Base:
@@ -63,3 +64,41 @@ class Base:
         with open(filename, "r", encoding="utf-8") as f:
             return ([cls.create(**dicts)
                     for dicts in cls.from_json_string(f.read())])
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ save_to_file_csv function """
+        from models.rectangle import Rectangle
+        from models.square import Square
+        if list_objs is not None:
+            if cls is Rectangle:
+                list_objs = [[obj.id, obj.width, obj.height, obj.x, obj.y]
+                             for obj in list_objs]
+            else:
+                list_objs = [[obj.id, obj.size, obj.x, obj.y]
+                             for obj in list_objs]
+
+        with open("{}.csv".format(cls.__name__), "w",
+                  newline="", encoding="utf-8") as f:
+            w = csv.writer(f)
+            w.writerows(list_objs)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ load_-from_csv_file function """
+        from models.rectangle import Rectangle
+        from models.square import Square
+        new_list = []
+        with open("{}.csv".format(cls.__name__), "r",
+                  newline="", encoding="utf-8") as f:
+            r = csv.reader(f)
+            for line in r:
+                line = [int(item) for item in line]
+                if cls is Rectangle:
+                    dictionary = {"id": line[0], "width": line[1], "height":
+                                  line[2], "x": line[3], "y": line[4]}
+                else:
+                    dictionary = {"id": line[0], "size": line[1],
+                                  "x": line[2], "y": line[3]}
+                new_list.append(cls.create(**dictionary))
+        return (new_list)
