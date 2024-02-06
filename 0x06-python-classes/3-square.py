@@ -6,14 +6,14 @@ class Square:
     """ Square Class """
 
     def __init__(self, size):
-        """ Initialization function
+        """ Initialization function.
 
         Args:
             size: Length of the square size.
 
         Raises:
-            TypeError: Size is not int
-            ValueError: Size is less than 0
+            TypeError: Size is not int.
+            ValueError: Size is less than 0.
 
         """
         if type(size) is not int:
@@ -23,7 +23,7 @@ class Square:
         self.__size = size
 
     def area(self):
-        """ Area of the Square method
+        """ Area of the Square function.
 
         Returns:
             The square of size.
