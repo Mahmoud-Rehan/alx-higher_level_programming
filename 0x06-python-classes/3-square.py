@@ -4,6 +4,7 @@
 
 class Square:
     """ Square Class """
+
     def __init__(self, size):
         """ Initialization method """
         if type(size) is not int:
