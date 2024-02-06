@@ -6,8 +6,8 @@ class Square:
     """ Square Class """
     def __init__(self, size=0, position=(0, 0)):
         """ Initialization function """
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -17,7 +17,7 @@ class Square:
     @size.setter
     def size(self, value):
         """ Update the size function """
-        if type(value) is not int:
+        if not isinstance(value, int):
             raise TypeError("size must be an integer")
         elif value < 0:
             raise ValueError("size must be >= 0")
@@ -44,11 +44,11 @@ class Square:
 
     def my_print(self):
         """ Print the Square function """
-        if self.__size == 0:
-            print("")
+        if not self.__size == 0:
+            print()
             return
-
-        [print("") for n in range(0, self.__position[1])]
+        else:
+            print() * self.__position[1])
         for j in range(self.__size):
             [print(" ", end="") for n in range(0, self.__position[0])]
             [print("#", end="") for m in range(0, self.__size)]
