@@ -5,52 +5,50 @@
 class Square:
     """ Square Class """
     def __init__(self, size=0, position=(0, 0)):
-        """ Initialization function """
-        self.__size = size
-        self.__position = position
+        """Initialiation function """
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
-        """ Retrieve the size function  """
+        """Retrieves the size of a square function"""
         return (self.__size)
 
     @size.setter
     def size(self, value):
-        """ Update the size function """
+        """Update the size function"""
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
-        elif value < 0:
+        if value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
 
     @property
     def position(self):
-        """ Retrieve the position function """
+        """Retrieves the position of the Square function"""
         return (self.__position)
 
     @position.setter
     def position(self, value):
-        """ Update the position function """
-        if (not isinstance (value, tuple) or
-                len(value) != 2 or
-                not all(isinstance(n, int) for n in value) or
-                not all(n >= 0 for n in value)):
+        """ Update position functon """
+        if (not isinstance(value, tuple) or len(value) != 2 or
+                not isinstance(value[0], int) or not isinstance(value[1], int)
+                or value[0] < 0 or value[1] < 0):
             raise TypeError("position must be a tuple of 2 positive integers")
-            self.__positon = value
+        self.__position = value
 
     def area(self):
-        """ Get the area of the Square function """
+        """ Get the area of Square function """
         return (self.__size * self.__size)
 
     def my_print(self):
-        """ Print the Square function """
-        if not self.__size == 0:
-            for i in range(0, self.__position[1]):
+        """prints the square function"""
+        if self.__size == 0:
+            print()
+        else:
+            for i in range(self.__position[1]):
                 print()
             for j in range(self.__size):
-                [print(" ", end="") for n in range(0, self.__position[0])]
-                [print("#", end="") for m in range(0, self.__size)]
-                print("")
-        else:
-            print()
-            return
+                for m in range(self.__position[0]):
+                    print(" ",  end="")
+                print("#" * self.__size)
