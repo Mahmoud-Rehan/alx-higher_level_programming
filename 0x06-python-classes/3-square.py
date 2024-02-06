@@ -6,7 +6,7 @@ class Square:
     """ Square Class """
 
     def __init__(self, size):
-        """ Initialization method
+        """ Initialization function
 
         Args:
             size: Length of the square size.
@@ -28,4 +28,4 @@ class Square:
         Returns:
             The square of size.
         """
-        return (self.__size ** self.__size)
+        return (self.__size * self.__size)
