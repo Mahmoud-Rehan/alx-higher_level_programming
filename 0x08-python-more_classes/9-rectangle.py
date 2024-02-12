@@ -87,3 +87,8 @@ class Rectangle:
             return (rect_1)
         else:
             return (rect_2)
+
+    @classmethod
+    def square(cls, size=0):
+        """ Set the width and height of Rectangle to size method """
+        return (cls(size, size))
