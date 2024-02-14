@@ -1,9 +1,10 @@
 #!/usr/bin/python3
+""" Add_integer functon module """
 
 
 def add_integer(a, b=98):
     """ Add two integers function
-        
+
     Args:
         a (int): First integer
         b (int): Second integer.
