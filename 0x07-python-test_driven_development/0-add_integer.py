@@ -3,9 +3,9 @@
 
 def add_integer(a, b=98):
     """ Add two integers function """
-    if type(a) is not int or type(a) is not float:
+    if not isinstance(a, int) or not isinstance(a, float):
         raise TypeError("a must be an integer")
-    if type(b) is not int or type(b) is not float:
+    if not isinstance(b, int) or not isinstance(b, float):
         raise TypeError("b must be an integer")
 
     return (int(a) + int(b))
