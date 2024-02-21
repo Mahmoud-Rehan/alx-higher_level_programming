@@ -11,5 +11,6 @@ class Student:
         self.age = age
 
     def def to_json(self):
-        """ Retrieve student's dict representation method """
+        """ Retrieve student's
+        dict representation method """
         return (self.__dict__)
