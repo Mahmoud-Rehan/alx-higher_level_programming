@@ -3,14 +3,13 @@
 
 
 class Student:
-    """ Student class """
+    """ Student Class """
     def __init__(self, first_name, last_name, age):
         """ Initialization method """
         self.first_name = first_name
-        self.last-name = last_name
+        self.last_name = last_name
         self.age = age
 
-    def def to_json(self):
-        """ Retrieve student's
-        dict representation method """
+    def to_json(self):
+        """ Retrieves a student's dictionary representation """
         return (self.__dict__)
