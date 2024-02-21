@@ -10,13 +10,12 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-    def def to_json(self, attrs=None):
-        """ Retrieves student's dict representation """
+    def to_json(self, attrs=None):
+        """ Retrieves the dict representation of a Student method """
         if attrs is None:
             return (self.__dict__)
 
         my_dict = dict()
-
         for item in attrs:
             try:
                 my_dict[item] = self.__dict__[item]
