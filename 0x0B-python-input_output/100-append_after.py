@@ -1,8 +1,10 @@
 #!/usr/bin/python3
-"""Module that contains the function append_after"""
+""" append_after Function Module """
 
 
 def append_after(filename="", search_string="", new_string=""):
+    """ Inserts a text in a file
+    after a specific string function """
     with open(filename, mode="r", encoding="utf-8") as f1:
         lines = f1.readlines()
 
