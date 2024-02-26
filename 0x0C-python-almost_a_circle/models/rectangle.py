@@ -16,15 +16,12 @@ class Rectangle(Base):
     @property
     def width(self):
         """ Retrieve the value of width """
-        return (self.__width)
+        return (self.__x)
 
     @width.setter
     def width(self, value):
-        """ Update the value of height method """
-        if type(value) is not int:
-            raise TypeError("width must be an integer")
-        if value <= 0:
-            raise ValueError("width must be > 0")
+        """ Update the value of width """
+        self.check_integer("width", value, False)
         self.__width = value
 
     @property
@@ -34,37 +31,37 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, value):
-        """ Update the value of height method """
-        if type(value) is not int:
-            raise TypeError("height must be an integer")
-        if value <= 0:
-            raise ValueError("height must be > 0")
+        """ Update the value of height """
+        self.validate_integer("height", value, False)
         self.__height = value
 
     @property
     def x(self):
-        """ Retrieve the value of x method """
+        """ Retrieve the value of x """
         return (self.__x)
 
     @x.setter
     def x(self, value):
-        """ Update the value of x method """
-        if type(value) is not int:
-            raise TypeError("x must be an integer")
-        if value < 0:
-            raise ValueError("x must be >= 0")
+        """ Update the value of x """
+        self.validate_integer("x", value)
         self.__x = value
 
     @property
     def y(self):
-        """ Retrieve the value of x """
+        """ Retrieve the value of y """
         return (self.__y)
 
     @y.setter
     def y(self, value):
         """ Update the value of y method """
-        if type(value) is not int:
-            raise TypeError("y must be an integer")
-        if value < 0:
-            raise ValueError("y must be >= 0")
+        self.validate_integer("y", value)
         self.__y = value
+
+    def validate_integer(self, name, value, equal=True):
+        """ Validation method """
+        if type(value) is not int:
+            raise TypeError(f"{name} must be an integer")
+        if equal and value < 0:
+            raise ValueError(f"{name} must be >= 0")
+        elif not equal and value <= 0:
+            raise ValueError(f"{name} must be > 0")
