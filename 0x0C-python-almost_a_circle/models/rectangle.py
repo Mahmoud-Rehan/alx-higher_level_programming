@@ -87,10 +87,14 @@ class Rectangle(Base):
                 .format(id=self.id, x=self.x, y=self.y,
                         width=self.width, height=self.height))
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """ Update the values of rectangle """
-        my_list = ["id", "width", "height", "x", "y"]
-        n = 0
-        for arg in args:
-            setattr(self, my_list[n], arg)
-            n = n + 1
+        if args is not None and len(args) != 0:
+            my_list = ["id", "width", "height", "x", "y"]
+            n = 0
+            for arg in args:
+                setattr(self, my_list[n], arg)
+                n = n + 1
+        else:
+            for k, v in kwargs.items():
+                setattr(self, k, v)
