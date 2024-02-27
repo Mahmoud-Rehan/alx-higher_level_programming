@@ -86,3 +86,11 @@ class Rectangle(Base):
         return ("[Rectangle] ({id}) {x}/{y} - {width}/{height}"
                 .format(id=self.id, x=self.x, y=self.y,
                         width=self.width, height=self.height))
+
+    def update(self, *args):
+        """ Update the values of rectangle """
+        my_list = ["id", "width", "height", "x", "y"]
+        n = 0
+        for arg in args:
+            setattr(self, my_list[n], arg)
+            n = n + 1
