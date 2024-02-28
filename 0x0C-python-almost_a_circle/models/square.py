@@ -48,3 +48,10 @@ class Square(Rectangle):
                     setattr(self, "width", v)
                 else:
                     setattr(self, k, v)
+
+    def to_dictionary(self):
+        """ View the dict representation of square method """
+        return ({"id": self.id,
+                 "size": self.size,
+                 "x": self.x,
+                 "y": self.y})
