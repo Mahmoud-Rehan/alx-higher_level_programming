@@ -28,3 +28,23 @@ class Square(Rectangle):
             raise ValueError("width must be > 0")
         self.width = value
         self.height = value
+
+    def update(self, *args, **kwargs):
+        """ Update the class square values """
+        if args is not None and len(args) != 0:
+            my_list = ["id", "size", "x", "y"]
+            i = 0
+            for arg in args:
+                if my_list[i] == "size":
+                    setattr(self, "height", arg)
+                    setattr(self, "width", arg)
+                else:
+                    setattr(self, my_list[i], arg)
+                i = i + 1
+        else:
+            for k, v in kwargs.items():
+                if k == "size":
+                    setattr(self, "height", v)
+                    setattr(self, "width", v)
+                else:
+                    setattr(self, k, v)
