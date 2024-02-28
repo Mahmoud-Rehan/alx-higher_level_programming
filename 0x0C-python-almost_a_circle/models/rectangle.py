@@ -100,6 +100,9 @@ class Rectangle(Base):
                 setattr(self, k, v)
 
     def to_dictionary(self):
-        """ View dictionary represetation of square method """
-        return ({"id": self.id, "size": self.width,
-                "x": self.x, "y": self.y})
+        """ View the dict representation of square method """
+        return {'id': self.id,
+                'width': self.width,
+                'height': self.height,
+                'x': self.x,
+                'y': self.y}
