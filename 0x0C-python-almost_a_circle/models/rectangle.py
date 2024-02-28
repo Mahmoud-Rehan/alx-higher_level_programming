@@ -98,3 +98,8 @@ class Rectangle(Base):
         else:
             for k, v in kwargs.items():
                 setattr(self, k, v)
+
+    def to_dictionary(self):
+        """ View dictionary represetation of square method """
+        return ({"id": self.id, "size": self.width,
+                "x": self.x, "y": self.y})
