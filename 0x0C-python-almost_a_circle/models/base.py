@@ -3,6 +3,7 @@
 import json
 import csv
 import os.path
+import turtle
 
 
 class Base:
@@ -100,3 +101,28 @@ class Base:
                                   "x": line[2], "y": line[3]}
                 objects.append(cls.create(**dictionary))
         return (objects)
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        import time
+        from random import randrange
+        turtle.Screen().colormode(255)
+        for n in list_rectangles + list_squares:
+            screen = turtle.Turtle()
+            screen.color((randrange(255), randrange(255), randrange(255)))
+            screen.pensize(1)
+            screen.penup()
+            screen.pendown()
+            screen.setpos((n.x + screen.pos()[0], n.y - screen.pos()[1]))
+            screen.pensize(10)
+            screent.forward(n.width)
+            screen.left(90)
+            screen.forward(n.height)
+            screenscreen.left(90)
+            screen.forward(n.width)
+            screen.left(90)
+            screen.forward(n.height)
+            screen.left(90)
+            screen.end_fill()
+
+        time.sleep(5)
