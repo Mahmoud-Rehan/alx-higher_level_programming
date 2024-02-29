@@ -92,8 +92,9 @@ class Base:
             for line in r:
                 line = [int(n) for n in line]
                 if cls is Rectangle:
-                    dictionary = {"id": line[0], "width": line[1], "height": line[2],
-                                  "x": line[3], "y": line[4]}
+                    dictionary = {"id": line[0], "width": line[1],
+                                  "height": line[2], "x": line[3],
+                                  "y": line[4]}
                 else:
                     dictionary = {"id": line[0], "size": line[1],
                                   "x": line[2], "y": line[3]}
