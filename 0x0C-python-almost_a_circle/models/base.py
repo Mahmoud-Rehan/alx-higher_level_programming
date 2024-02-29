@@ -2,6 +2,7 @@
 """ Base Class Module """
 import json
 import csv
+import os.path
 
 
 class Base:
@@ -53,3 +54,13 @@ class Base:
             dummy = None
         dummy.update(**dictionary)
         return (dummy)
+
+    @classmethod
+    def load_from_file(cls):
+        """ Gets a list of instances method """
+        filename = "{}.json".format(cls.__name__)
+        if os.path.exists(filename) is False:
+            return ([])
+        with open(filename, "r", encoding="utf-8") as f:
+            return ([cls.create(**dictionary) for dictionary in
+                     cls.from_json_string(f.read())])
