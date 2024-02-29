@@ -64,3 +64,38 @@ class Base:
         with open(filename, "r", encoding="utf-8") as f:
             return ([cls.create(**dictionary) for dictionary in
                      cls.from_json_string(f.read())])
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ Serialize in CSV file method """
+        from models.square import Square
+        from models.rectangle import Rectangle
+        filename = "{}.csv".format(cls.__name__)
+        with open(filename, "w", newline="") as f:
+            w = csv.writer(f)
+            if cls is Rectangle:
+                for i in list_objs:
+                    w.writerow([i.id, i.width, i.height, i.x, i.y])
+            if cls is Square:
+                for j in list_objs:
+                    w.writerow([j.id, j.size, j.x, j.y])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ Deserialize in CSV file method """
+        from models.square import Square
+        from models.rectangle import Rectangle
+        filename = "{}.csv".format(cls.__name__)
+        objects = list()
+        with open(filename, "r", encoding="utf-8", newline="") as f:
+            r = csv.reader(f)
+            for line in r:
+                line = [int(n) for n in line]
+                if cls is Rectangle:
+                    dictionary = {"id": line[0], "width": line[1], "height": line[2],
+                                  "x": line[3], "y": line[4]}
+                else:
+                    dictionary = {"id": line[0], "size": line[1],
+                                  "x": line[2], "y": line[3]}
+                objects.append(cls.create(**dictionary))
+        return (objects)
