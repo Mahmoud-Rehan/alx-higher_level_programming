@@ -60,7 +60,7 @@ void print_python_bytes(PyObject *p)
 	{
 		printf("  size: %ld\n", obj_size);
 		printf("  trying string: %s\n", str);
-		printf("  first %i bytes:", obj_size < 10 ? size + 1 : 10);
+		printf("  first %zi bytes:", obj_size < 10 ? size + 1 : 10);
 
 		for (n = 0; n < obj_size && n < 10; n++)
 		{
