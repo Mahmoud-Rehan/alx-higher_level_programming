@@ -58,15 +58,18 @@ void print_python_bytes(PyObject *p)
 
 	obj_size = PyBytes_Size(p);
 
-	printf("  size: %ld\n", obj_size);
-	printf("  trying string: %s\n", ((PyBytesObject *)p)->ob_sval);
-	printf("  first 10 bytes:");
-
-	str = ((PyBytesObject *)p)->ob_sval;
-
-	for (n = 0; n < obj_size && n < 10; n++)
+	if (PyBytes_AsStringAndSize(p, &str, &obj_size) != -1)
 	{
-    		printf(" %02x", str[n]);
+		printf("  size: %ld\n", obj_size);
+		printf("  trying string: %s\n", ((PyBytesObject *)p)->ob_sval);
+		printf("  first 10 bytes:");
+
+		str = ((PyBytesObject *)p)->ob_sval;
+
+		for (n = 0; n < obj_size && n < 10; n++)
+		{
+    			printf(" %02x", str[n]);
+		}
+		printf("\n");
 	}
-	printf("\n");
 }
