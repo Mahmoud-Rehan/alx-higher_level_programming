@@ -24,6 +24,10 @@ void print_python_list(PyObject *p)
 	for (n = 0; n < list_size; n++)
 	{
 		printf("Element %ld: %s\n", n, (object->ob_item[n])->ob_type->tp_name);
+		if (!strcmp((object->ob_item[n])->ob_type->tp_name, "bytes"))
+		{
+			print_python_bytes(object->ob_item[n]);
+		}
 	}
 }
 
