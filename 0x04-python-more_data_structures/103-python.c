@@ -58,11 +58,11 @@ void print_python_bytes(PyObject *p)
 
 	if (PyBytes_AsStringAndSize(p, &str, &obj_size) != -1)
 	{
-		printf("  size: %ld\n", obj_size);
+		printf("  size: %zd\n", obj_size);
 		printf("  trying string: %s\n", str);
 		printf("  first %zi bytes:", obj_size < 10 ? obj_size + 1 : 10);
 
-		for (n = 0; n < obj_size && n < 10; n++)
+		for (n = 0; n < obj_size + 1&& n < 10; n++)
 		{
     			printf(" %02hhx", str[n]);
 		}
