@@ -58,7 +58,7 @@ void print_python_bytes(PyObject *p)
 
 	for (n = 0; n < obj_size && n < 10; n++)
 	{
-    		printf(" %02x", string[i]);
+    		printf(" %02x", str[n]);
 	}
 	printf("\n");
 }
