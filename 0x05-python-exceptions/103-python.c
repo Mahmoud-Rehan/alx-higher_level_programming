@@ -94,5 +94,5 @@ void print_python_float(PyObject *p)
 	}
 
 	str = PyOS_double_to_string(d, 'r', 0, Py_DTSF_ADD_DOT_0, NULL);
-	printf("  value: %.17g\n", PyFloat_AsDouble(p));
+	printf("  value: %s\n", str);
 }
