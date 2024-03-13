@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Square Class Module """
 
+
 class Square:
     """ Square Class """
     def __init__(self, size=0, position=(0, 0)):
@@ -24,7 +25,6 @@ class Square:
 
         self.__size = value
 
-
     @property
     def position(self):
         """ Retrieve the position method """
@@ -47,7 +47,6 @@ class Square:
     def area(self):
         """ Calculate the area method """
         return (size ** 2)
-
 
     def my_print(self):
         """ Print square method """
