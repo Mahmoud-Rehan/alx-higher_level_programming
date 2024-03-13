@@ -1,17 +1,21 @@
 #!/usr/bin/python3
-
+""" Square Class Module """
 
 class Square:
+    """ Square Class """
     def __init__(self, size=0, position=(0, 0)):
+        """ Initialization Method """
         self.size = size
         self.position = position
 
     @property
     def size(self):
+        """ Retrieve the size method """
         return (self.__size)
 
     @size.setter
     def size(self, value):
+        """ Update the size method """
         if type(value) is not int:
             raise TypeError("size must be an integer")
 
@@ -23,10 +27,12 @@ class Square:
 
     @property
     def position(self):
+        """ Retrieve the position method """
         return (self.__position)
 
     @position.setter
     def position(self, value):
+        """ Update the position method """
         if type(value) is not tuple:
             raise TypeError("position must be a tuple of 2 positive integer")
         elif not len(value) == 2:
@@ -39,6 +45,5 @@ class Square:
         self.__position = value
 
     def area(self):
+        """ Calculate the area method """
         return (size ** 2)
-
-    
