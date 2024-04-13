@@ -38,7 +38,18 @@ def matrix_mul(m_a, m_b):
     elif all(len(b_row) != len(m_b[0]) for b_row in m_b):
         raise TypeError("each row of m_b must be of the same size")
 
-    if len(m_a[0]) != len(m_b[0]):
+
+    a = 0
+
+    for col in m_a[0]:
+        a += 1
+    
+    b = 0
+    
+    for row in m_b:
+        b += 1
+
+    if a != b:
         raise ValueError("m_a and m_b can't be multiplied")
 
 
