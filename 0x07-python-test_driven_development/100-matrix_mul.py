@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 """ Multiplication of two Matrices and
 return the result Matrix Function Module """
-
-
 def matrix_mul(m_a, m_b):
     """Multiply two matrices.
 
