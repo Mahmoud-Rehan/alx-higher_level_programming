@@ -16,7 +16,7 @@ def matrix_mul(m_a, m_b):
 
     for a_row in m_a:
         if type(a_row) is not list:
-            raise TypeError("m_a must be list of lists")
+            raise TypeError("m_a must be a list of lists")
 
     for b_row in m_b:
         if type(b_row) is not list:
