@@ -1,16 +1,13 @@
-# 100-matrix_mul.txt
+The ``100-matrix_mul`` module
+======================
 
-============================
-How to Use 100-matrix_mul.py
-============================
+This is a text file in reStructuredText format to test the above module.
 
-This module defines a matrix multiplication function ``matrix_mul(m_a, m_b)``.
+Using ``matrix_mul``
+-------------------
 
-Usage
-=====
+First import ``matrix_mul`` from the ``100-matrix_mul`` module:
 
-``matrix_mul(...)`` returns a new matrix representing the multiplication of
-``m_a`` by ``m_b``.
     >>> matrix_mul = __import__('100-matrix_mul').matrix_mul
     
 
