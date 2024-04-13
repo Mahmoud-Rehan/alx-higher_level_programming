@@ -1,12 +1,15 @@
 #!/usr/bin/python3
-"""Multiplication of two Matrices
-    and return the Matrix in result
-    Function Module """
+"""
+Multiplication of two Matrices
+and return the Matrix in result
+Function Module
+"""
 
 
 def matrix_mul(m_a, m_b):
-    """Multiplication of two Matrices
-        and return the Matrix in result
+    """
+    Multiplication of two Matrices
+    and return the Matrix in result
     """
 
     if type(m_a) is not list:
