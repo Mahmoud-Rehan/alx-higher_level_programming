@@ -33,9 +33,9 @@ def matrix_mul(m_a, m_b):
             if not isinstance(b_element, int) and not isinstance(b_element, float):
                 raise TypeError("m_b should contain only integers or floats")
 
-    if all(len(a_row) != len(m_a[0]) for a_row in m_a):
+    if not all(len(a_row) == len(m_a[0]) for a_row in m_a):
         raise TypeError("each row of m_a must be of the same size")
-    elif all(len(b_row) != len(m_b[0]) for b_row in m_b):
+    if not all(len(b_row) == len(m_b[0]) for b_row in m_b):
         raise TypeError("each row of m_b must be of the same size")
 
 
