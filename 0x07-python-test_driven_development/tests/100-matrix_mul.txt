@@ -1,13 +1,10 @@
 The ``100-matrix_mul`` module
-======================
-
-This is a text file in reStructuredText format to test the above module.
+============================
 
 Using ``matrix_mul``
--------------------
+---------------------
 
-First import ``matrix_mul`` from the ``100-matrix_mul`` module:
-
+Import module:
     >>> matrix_mul = __import__('100-matrix_mul').matrix_mul
     
 
