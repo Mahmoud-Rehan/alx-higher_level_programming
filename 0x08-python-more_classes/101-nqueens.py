@@ -12,7 +12,7 @@ if __name__ == "__main__":
         exit(1)
 
     if argv[1].isdigit() is False:
-        print("N musr be a number")
+        print("N must be a number")
         exit(1)
 
     num = int(argv[1])
@@ -39,7 +39,7 @@ if __name__ == "__main__":
 
         n = 0
 
-        while(n < x):
+        while (n < x):
             if abs(my_list[n][1] - y) == abs(n - x):
                 return (False)
 
@@ -56,10 +56,10 @@ if __name__ == "__main__":
         """ recursive backtracking function to find the solution """
         for y in range(num):
             clear_mylist(x)
-            
+
             if reject_solution(x, y):
                 my_list[x][1] = y
-                
+
                 if (x == num - 1):
                     print(my_list)
                 else:
