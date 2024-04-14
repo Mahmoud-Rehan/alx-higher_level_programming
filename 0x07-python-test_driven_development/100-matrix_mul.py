@@ -29,7 +29,7 @@ def matrix_mul(m_a, m_b):
                 raise TypeError("m_a should contain only integers or floats")
 
     for b_row in m_b:
-        for b_element in b_row:
+        for element in b_row:
             if not isinstance(element, int) and not isinstance(element, float):
                 raise TypeError("m_b should contain only integers or floats")
 
