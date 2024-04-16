@@ -18,6 +18,7 @@ status_codes = {
 size = 0
 n = 0
 
+
 def print_states():
     print(f"File size: {size}")
 
@@ -33,7 +34,7 @@ try:
         if len(split_line) >= 2:
             status = split_line[-2]
             size = size + int(split_line[-1])
-            
+
             if status in status_codes:
                 status_codes[status] += 1
 
