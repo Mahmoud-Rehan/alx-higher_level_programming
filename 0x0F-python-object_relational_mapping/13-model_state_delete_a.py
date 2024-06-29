@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Script that adds the State object “Louisiana” """
+""" Script that adds the State object Louisiana """
 from model_state import Base, State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
