@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ City Class Module """
-from sqlalchemy import create_engine, Column, Integer, String, ForiegnKey
+from sqlalchemy import create_engine, Column, Integer, String, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
 
 
