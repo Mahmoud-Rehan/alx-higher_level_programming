@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Script that lists all State objects from the database hbtn_0e_6_usa """
+""" Script that lists all city objects from the database hbtn_0e_6_usa """
 from model_state import Base, State
 from model_city import City
 from sqlalchemy import create_engine
