@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" State Class Module """
+""" City Class Module """
 from sqlalchemy import create_engine, Column, Integer, String, ForiegnKey
 from sqlalchemy.ext.declarative import declarative_base
 
@@ -8,7 +8,7 @@ Base = declarative_base()
 
 
 class City(Base):
-    """ State Class """
+    """ City Class """
     __tablename__ = 'cities'
 
     id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
