@@ -4,25 +4,23 @@
 
 def find_peak(list_of_integers):
     """ find_peak Function """
-    if list_of_integers == []:
+    if not list_of_integers:
         return (None)
 
-    length = len(list_of_integers)
+    low = 0
+    high = len(list_of_integers) - 1
 
-    if length == 0:
-        return (None)
-    elif length == 1:
-        return (list_of_integers[0])
-    elif length == 2:
-        return (max(list_of_integers))
+    while low <= high:
+        middle = (low + high) // 2
+        peak = list_of_integers[middle]
 
-    middle = int(length / 2)
-    peak = list_of_integers[middle]
+        if (middle == 0 or peak >= list_of_integers[middle - 1]) and \
+           (middle == len(list_of_integers) - 1 or
+           peak >= list_of_integers[middle + 1]):
+            return (peak)
+        elif middle > 0 and list_of_integers[middle - 1] > peak:
+            high = middle - 1
+        else:
+            low = middle + 1
 
-    if peak > list_of_integers[middle - 1] and \
-            peak > list_of_integers[middle + 1]:
-        return (peak)
-    elif peak < list_of_integers[middle - 1]:
-        return (find_peak(list_of_integers[:middle]))
-    else:
-        return (find_peak(list_of_integers[middle + 1:]))
+    return (None)
