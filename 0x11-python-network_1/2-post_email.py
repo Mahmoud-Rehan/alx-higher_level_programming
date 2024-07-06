@@ -15,7 +15,7 @@ if __name__ == "__main__":
     encoded = urlencode({"email": email}).encode("utf-8")
     request = Request(url, data=encoded, method="POST")
 
-    with urlopen(request) as response:
+    with urlopen(request) as response:          
         body = response.read()
 
     decoded = body.decode("utf-8")
