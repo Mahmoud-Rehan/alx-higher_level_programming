@@ -10,12 +10,13 @@ from sys import argv
 
 if __name__ == "__main__":
     url = argv[1]
+    my_value = {"email": argv[2]}
 
-    encoded = urlencode({"email": argv[2]}).encode("ascii")
+    encoded = urlencode(value).encode("ascii")
     request = Request(url, encoded)
 
     with urlopen(request) as response:
         body = response.read()
+        decoded = body.decode("utf-8")
 
-    decoded = body.decode("utf-8")
     print(f"Your email is: {decoded}")
