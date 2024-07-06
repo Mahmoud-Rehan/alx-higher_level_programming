@@ -12,7 +12,9 @@ if __name__ == "__main__":
     url = argv[1]
 
     try:
-        with urlopen(url) as response:
+        request = Request(url)
+
+        with urlopen(request) as response:
             body = respose.read()
 
         decoded = response.decode("utf-8")
