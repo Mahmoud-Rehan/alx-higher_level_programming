@@ -17,7 +17,7 @@ if __name__ == "__main__":
         with urlopen(request) as response:
             body = respose.read()
 
-        decoded = response.decode("utf-8")
+        decoded = body.decode("utf-8")
         print(decoded)
     except HTTPError as exception:
         print(f"Error code: {exception.code}")
