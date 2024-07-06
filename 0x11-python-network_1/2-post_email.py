@@ -10,9 +10,8 @@ from sys import argv
 
 if __name__ == "__main__":
     url = argv[1]
-    email = argv[2]
 
-    encoded = urlencode({"email": email}).encode("utf-8")
+    encoded = urlencode({"email": argv[2]}).encode("ascii")
     request = Request(url, encoded)
 
     with urlopen(request) as response:
