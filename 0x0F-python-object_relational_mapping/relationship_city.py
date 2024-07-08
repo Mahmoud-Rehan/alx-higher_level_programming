@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """ City Class Module """
-from sqlalchemy import create_engine, Column, Integer, String, ForeignKey
+from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
-from model_state import Base, State
+from relationship_state  import Base
 
 
 class City(Base):
