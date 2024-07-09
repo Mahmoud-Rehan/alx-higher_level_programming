@@ -4,7 +4,7 @@
     and password) and uses the GitHub
     API to display your id """
 import requests
-import requests.auth import HTTPBasicAuth
+from requests.auth import HTTPBasicAuth
 from sys import argv
 
 
