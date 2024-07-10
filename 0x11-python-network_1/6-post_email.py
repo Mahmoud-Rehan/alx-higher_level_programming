@@ -12,4 +12,4 @@ if __name__ == "__main__":
     email = argv[2]
 
     response = requests.post(url, data=email)
-    print(f"Your email is: {response.text}")
+    print(f"{response.text}")
