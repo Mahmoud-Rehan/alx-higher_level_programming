@@ -18,4 +18,4 @@ if __name__ == "__main__":
     with urlopen(request) as response:
         body = response.read()
         decoded = body.decode("utf-8")
-        print(f"Email: {decoded}")
+        print(f"{decoded}")
