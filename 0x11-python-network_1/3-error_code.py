@@ -15,7 +15,7 @@ if __name__ == "__main__":
         request = Request(url)
 
         with urlopen(request) as response:
-            body = respose.read()
+            body = response.read()
 
         decoded = body.decode("utf-8")
         print(decoded)
