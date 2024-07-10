@@ -12,7 +12,7 @@ if __name__ == "__main__":
     url = argv[1]
     my_value = {"email": argv[2]}
 
-    encoded = urlencode(value).encode("ascii")
+    encoded = urlencode(my_value).encode("ascii")
     request = Request(url, encoded)
 
     with urlopen(request) as response:
